@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using InspectionAPI;
 
 namespace InspectionAPI
 {
@@ -9,6 +10,7 @@ namespace InspectionAPI
         public DbSet<Inspection> Inspection { get; set; }   
         public DbSet<Inspection> InspectionTypes { get; set; }
         public DbSet<Status> Statuses { get; set; }
+        public DbSet<InspectionAPI.InspectionType> InspectionType { get; set; }
 
     }
 }

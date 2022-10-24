@@ -10,7 +10,7 @@ namespace InspectionAPI
 
         [StringLength(20)]
         public string Comments { get; set; } = String.Empty;
-        public int InspectionTypeId { get; set; } // foriegn key
+        public int InspectionTypeId { get; set; } // foriegn key      
         public InspectionType? InspectionType { get; set; } 
     }
 }
