@@ -24,14 +24,16 @@ namespace InspectionAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Inspection>>> GetInspection()
         {
-            return await _context.Inspection.Include("InspectionType").ToListAsync();
+            return await _context.Inspection                 
+                .ToListAsync();
         }
 
         // GET: api/Inspections/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Inspection>> GetInspection(int id)
         {
-            var inspection = await _context.Inspection.FindAsync(id);
+            var inspection = await _context.Inspection
+                .FindAsync(id);  
 
             if (inspection == null)
             {

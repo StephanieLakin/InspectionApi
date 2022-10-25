@@ -25,14 +25,17 @@ namespace InspectionAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<InspectionType>>> GetInspectionType()
         {
-            return await _context.InspectionType.ToListAsync();
+            return await _context.InspectionType               
+                .ToListAsync();
+                
+
         }
 
         // GET: api/InspectionTypes/5
         [HttpGet("{id}")]
         public async Task<ActionResult<InspectionType>> GetInspectionType(int id)
         {
-            var inspectionType = await _context.InspectionType.FindAsync(id);
+            var inspectionType = await _context.InspectionType.FindAsync(id);           
 
             if (inspectionType == null)
             {
@@ -40,6 +43,7 @@ namespace InspectionAPI.Controllers
             }
 
             return inspectionType;
+                
         }
 
         // PUT: api/InspectionTypes/5

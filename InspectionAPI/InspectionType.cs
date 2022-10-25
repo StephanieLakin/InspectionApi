@@ -7,6 +7,8 @@ namespace InspectionAPI
         public int Id { get; set; }
 
        [StringLength(20)]
-        public string InspectionName { get; set; } = String.Empty;       
+        public string? InspectionName { get; set; } = string.Empty;
     }
 }
+
+
