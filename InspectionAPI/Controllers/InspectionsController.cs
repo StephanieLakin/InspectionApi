@@ -21,12 +21,23 @@ namespace InspectionAPI.Controllers
         }
 
         // GET: api/Inspections
+        //[HttpGet]
+        //public async Task<ActionResult<IEnumerable<Inspection>>> GetInspection()
+        //{
+        //    return await _context.Inspection                 
+        //        .ToListAsync();
+        //}
+
+
+
+        // GET: api/Inspections
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Inspection>>> GetInspection()
         {
-            return await _context.Inspection                 
-                .ToListAsync();
+            return await _context.Inspection.Include("InspectionType").ToListAsync();
         }
+
+
 
         // GET: api/Inspections/5
         [HttpGet("{id}")]
